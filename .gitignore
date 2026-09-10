@@ -1,0 +1,14 @@
+dist/
+data/
+logs/
+*.exe
+*.obj
+*.res
+*.pdb
+*.ilk
+*.log
+*.zip
+settings.json
+profile.json
+.vs/
+.vscode/
