@@ -15,13 +15,13 @@ BEGIN
  BEGIN
   BLOCK "041104b0"
   BEGIN
-   VALUE "CompanyName", "Desktop Chibi Friend Project"
+   VALUE "CompanyName", "mamem"
    VALUE "FileDescription", "Desktop Chibi Friend"
-   VALUE "FileVersion", "0.4.1"
+   VALUE "FileVersion", "0.4.2"
    VALUE "InternalName", "DesktopChibiFriend"
    VALUE "OriginalFilename", "DesktopChibiFriend.exe"
    VALUE "ProductName", "Desktop Chibi Friend"
-   VALUE "ProductVersion", "0.4.1"
+   VALUE "ProductVersion", "0.4.2"
   END
  END
  BLOCK "VarFileInfo"

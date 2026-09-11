@@ -9,3 +9,11 @@ cmd /d /s /c $cmd
 if($LASTEXITCODE-ne 0){throw "QA build failed: $LASTEXITCODE"}
 & (Join-Path $root 'qa.exe') (Join-Path $root 'dist')
 if($LASTEXITCODE-ne 0){throw "QA failed: $LASTEXITCODE"}
+
+$main = Get-Content -Raw -LiteralPath (Join-Path $root 'main.cpp')
+$collect = [regex]::Match($main, '(?s)void App::collect\(size_t i\)\{.*?\n\}')
+if (-not $collect.Success) { throw 'collect() was not found.' }
+foreach ($required in @('vx_=0;', 'vy_=0;', 'targetSurface_=-1;', 'phantomClimb_=false;', 'mode_=Mode::Normal;')) {
+    if (-not $collect.Value.Contains($required)) { throw "Pickup stop regression: missing $required" }
+}
+Write-Host 'Pickup stop regression: OK'
